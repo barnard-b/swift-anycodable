@@ -1,9 +1,15 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
     name: "AnyCodable",
+    platforms: [
+        .iOS(.v8),
+        .macOS(.v10_10),
+        .tvOS(.v9),
+        .watchOS(.v5)
+    ],
     products:[
         .library(
             name: "AnyCodable", 
@@ -14,6 +20,5 @@ let package = Package(
         .target(name: "AnyCodable", path: "Sources"),
         .testTarget(name: "AnyCodableTests", dependencies: ["AnyCodable"], path: "Tests"),
     ],
-
-    swiftLanguageVersions: [5, 4]
+    swiftLanguageVersions: [.v5]
 )
